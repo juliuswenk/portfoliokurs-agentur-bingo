@@ -5,10 +5,10 @@ const ENTRIES = [
   'AI Slop',
   'Arbeitsplätze, die durch AI ersetzt wurden',
   'Dozenten glazen viel zu krass',
-  'Man merkt, dass sie eigentlich gar keinen Bock haben, dass wir da sind',
+  'Keiner hat Bock auf unseren Besuch',
   'Helvetica',
   'Man muss so krass mit den Augen rollen',
-  '„Synergien“',
+  'Sichtbeton',
   'Pimmelparty',
   'Inneneinrichtung teurer als Praktikumsgehalt',
   'Pantone Folder',
@@ -58,6 +58,12 @@ if (typeof document !== 'undefined') {
   let card;
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (saved && Array.isArray(saved.items)) {
+      const oldField = saved.items.indexOf('„Synergien“');
+      saved.items = saved.items.map(item => item === '„Synergien“' ? 'Sichtbeton' :
+        item === 'Man merkt, dass sie eigentlich gar keinen Bock haben, dass wir da sind' ? 'Keiner hat Bock auf unseren Besuch' : item);
+      if (oldField !== -1 && Array.isArray(saved.marked)) saved.marked = saved.marked.filter(index => index !== oldField);
+    }
     if (validCard(saved)) card = saved;
   } catch { /* Eine gesperrte oder beschädigte Ablage verhindert das Spielen nicht. */ }
   if (!card) card = createCard();
