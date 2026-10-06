@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#009c69">
+  <meta name="description" content="Agenturtour, aber mit Gewinnchance. Dein Bingo für den Portfoliokurs in Berlin.">
+  <title>Agentur-Bingo — Portfoliokurs Berlin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23efabef'/%3E%3Ccircle cx='32' cy='32' r='27' fill='%23009c69'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial' font-size='42' font-weight='900'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="bingo.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="eyebrow"><span>Portfoliokurs ↗ Berlin</span><span>Auf Agenturtour</span></div>
+    <header class="intro">
+      <p class="kicker">Große Ideen. Flache Hierarchien.</p>
+      <h1>AGENTUR<span class="title-dash">—</span><br><span class="bingo-title">BINGO</span><span class="stamp" aria-hidden="true">BÜRO<br>SAFARI<br>↗</span></h1>
+      <p class="instructions">Gesehen? Gehört? Antippen.<br>Vier in einer Reihe und du hast Bingo.</p>
+    </header>
+    <section class="play-area" aria-label="Deine Bingo-Karte">
+      <div class="burst" aria-hidden="true"></div>
+      <div class="card">
+        <div class="card-top"><span>Die Lage ist kreativ.</span><span>4 × 4</span></div>
+        <div id="board" class="board" role="group" aria-label="16 Bingo-Felder"></div>
+        <noscript><p class="no-script">Bitte aktiviere JavaScript, um Bingo zu spielen.</p></noscript>
+        <div class="card-bottom"><span id="progress">0 / 16 abgehakt</span><span id="result" role="status" aria-live="polite">Augen auf.</span></div>
+      </div>
+    </section>
+    <div class="actions"><button class="new-card" id="new-card" type="button">Neue Karte <span aria-hidden="true">↻</span></button><p>Reihe, Spalte oder diagonal.<br><span id="save-note">Deine Karte bleibt auf diesem Gerät gespeichert.</span></p></div>
+    <footer><span>Viel gesehen.<br><strong>Wenig geglaubt.</strong></span><span class="footer-mark" aria-hidden="true">✳</span><span>Berlin<br>Portfoliokurs</span></footer>
+  </main>
+  <dialog id="reset-dialog" aria-labelledby="reset-title">
+    <form method="dialog"><span class="dialog-kicker">Alles auf Anfang</span><h2 id="reset-title">Neue Runde?</h2><p>Du bekommst eine neue Karte. Deine bisherigen Häkchen werden gelöscht.</p><div class="dialog-actions"><button value="cancel">Weiterspielen</button><button value="new" class="confirm">Neu mischen ↻</button></div></form>
+  </dialog>
+</body>
+</html>
